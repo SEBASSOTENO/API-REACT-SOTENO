@@ -4,14 +4,14 @@ import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// import App from './components/Sidebar';
-// ReactDOM.render( < App / > , document.getElementById('root'));
+import App from './components/Sidebar';
+ReactDOM.render( < App / > , document.getElementById('root'));
 
 // import Json from './components/Mexart';
 // ReactDOM.render( < Json / > , document.getElementById('root'));
 
-import Api from './components/Http';
-ReactDOM.render( < Api / > , document.getElementById('root'));
+// import Api from './components/Http';
+// ReactDOM.render( < Api / > , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

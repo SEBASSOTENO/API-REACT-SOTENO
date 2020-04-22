@@ -5,6 +5,7 @@ import Title from 'antd/lib/typography/Title';
 
 const { Header, Footer, Sider, Content } = Layout;
 
+
 function App() {
     return (
         <div className="App">
@@ -46,6 +47,7 @@ function App() {
                         <Breadcrumb.Item></Breadcrumb.Item>
                     </Breadcrumb>
                     <div style={{background: '#fff', padding: 24, minHeight: 580}}>Content</div>
+  
                 </Content>
 
                 <Footer style={{ textAlign: 'center'}}>U T V T  en colaboracion con  M E X A R - T</Footer>

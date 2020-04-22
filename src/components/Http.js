@@ -13,8 +13,8 @@ class App extends Component {
 
     render (){
         return (
-            <div>
-             <h1>Ejemplo2</h1>
+            <div><center>
+             <h1>EJEMPLO FAKE API</h1>
              <h2>{ this.state.text }</h2>
              <ul>
                 {this.state.users.map(user=>(
@@ -23,6 +23,7 @@ class App extends Component {
                     </li>
                 ))}    
              </ul>  
+                </center>
             </div>
         )
     }
