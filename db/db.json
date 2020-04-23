@@ -1,0 +1,38 @@
+{
+    "users": [
+      { "id": 1, 
+        "name": "prueba1"
+      },
+      { "id": 2, 
+        "name": "prueba2"
+      },
+      { "id": 3, 
+        "name": "prueba3"
+      },
+      { "id": 4, 
+        "name": "prueba4"
+      },
+      { "id": 5, 
+        "name": "prueba5"
+      },
+      { "id": 6, 
+        "name": "prueba6"
+      },
+      { "id": 7, 
+        "name": "prueba7"
+      },
+      { "id": 8, 
+        "name": "prueba8"
+      },
+      { "id": 9, 
+        "name": "prueba9"
+      },
+      { "id": 10, 
+        "name": "prueba10"
+      }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }

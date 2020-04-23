@@ -1,7 +1,8 @@
 import React from 'react';
 import '../App.css';
-import {Layout, Avatar, Menu, Breadcrumb} from 'antd';
+import {Layout, Avatar, Menu} from 'antd';
 import Title from 'antd/lib/typography/Title';
+import Mexart from '../components/Mexart';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -43,11 +44,9 @@ function App() {
         </Sider>
             <Layout>
                 <Content style={{ padding: '0 50px'}}>
-                    <Breadcrumb style={{ margin: '16px 0'}}>
-                        <Breadcrumb.Item></Breadcrumb.Item>
-                    </Breadcrumb>
-                    <div style={{background: '#fff', padding: 24, minHeight: 580}}>Content</div>
-  
+                        <div className="prueba">
+                            <Mexart/>
+                        </div>
                 </Content>
 
                 <Footer style={{ textAlign: 'center'}}>U T V T  en colaboracion con  M E X A R - T</Footer>

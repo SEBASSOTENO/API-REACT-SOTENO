@@ -1,37 +1,56 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import '../App.css';
+import { List, Card } from 'antd';
+import axios from 'axios';
 
 class App extends Component {
-    state ={
-        mexart: {}
+    state= {
+        mexaData: []
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        const id = event.target[0].value
-        const url = 'http://127.0.0.1:8000/api/users'
-        fetch(url + '/' + id)
-         .then(res => res.json())
-         .then(data => console.log(data))
+    componentDidMount (){
+        axios.get('http://localhost:3000/users')
+        .then( res => {
+            const { results } = res.data;
+            console.log( results );
 
+            this.setState({
+                mexaData: results
+            })
+        })
+        
+        .catch( error => {
+            console.log (error);
+        });
     }
 
     render () {
-        return(
-            <div>
-            <h1>
-            Ejemplo Mexart
-            </h1>
-            <form onSubmit={this.handleSubmit}>
-                <input 
-                type="text" 
-                placeholder="INGRESA ID"
-                />
-                <button>
-                    Buscar
-                </button>
-            </form>
-            </div>
-        )
+        const { mexaData } = this.setState;
+        return (
+            < div >
+              <h1>MEXAR-T API.js</h1>
+              <List
+                grid={{
+                  gutter: 16,
+                  xs: 1,
+                  sm: 2,
+                  md: 4,
+                  lg: 4,
+                  xl: 6,
+                  xxl: 3,
+                }}
+                dataSource={mexaData}
+                renderItem={item => (
+                  <List.Item>
+                    <Card title={item.id}>
+                      {item.name}
+                    </Card>
+                  </List.Item>
+                )}
+              />
+            </div >
+      
+          );
     }
 }
 
