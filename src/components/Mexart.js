@@ -4,28 +4,29 @@ import { List, Card } from 'antd';
 import axios from 'axios';
 
 class App extends Component {
-    state= {
-        mexaData: []
-    }
+      constructor () {
+        super();
 
-    componentDidMount (){
-        axios.get('http://localhost:3000/users')
-        .then( res => {
-            const { results } = res.data;
-            console.log( results );
 
-            this.setState({
-                mexaData: results
-            })
-        })
-        
-        .catch( error => {
-            console.log (error);
-        });
-    }
+      this.state = {
+          users: []
+      };
+
+          axios.get('http://localhost:3001/users')
+          .then( res => {
+              this.setState({
+                  users: res.data
+              })
+          })
+          
+          .catch( error => {
+              console.log (error);
+          });
+      }
 
     render () {
-        const { mexaData } = this.setState;
+        
+      const { users } = this.state;
         return (
             < div >
               <h1>MEXAR-T API.js</h1>
@@ -39,11 +40,11 @@ class App extends Component {
                   xl: 6,
                   xxl: 3,
                 }}
-                dataSource={mexaData}
+                dataSource={users}
                 renderItem={item => (
                   <List.Item>
-                    <Card title={item.id}>
-                      {item.name}
+                    <Card title={item.name}>
+                      {item.id}
                     </Card>
                   </List.Item>
                 )}

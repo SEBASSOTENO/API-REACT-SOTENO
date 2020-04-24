@@ -1,22 +1,40 @@
-import React from 'react';
-import '../App.css';
-import {Layout, Typography, Avatar, Menu} from 'antd';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-const { Header, Footer, Sider, Content } = Layout;
+class App extends Component {
 
-function App() {
-    return (
-        <div className="App">
-            <Layout>
-                <Sider style={{background:'red'}}>Sider</Sider>
-                <Layout>
-                    <Header>Header</Header>
-                    <Content>Content</Content>
-                    <Footer>Footer</Footer>
-                </Layout>
-            </Layout>
+    constructor () {
+        super();
+    
+
+    this.state = {
+        users: []
+    };
+
+        axios.get('http://localhost:3001/users')
+        .then( res => {
+            this.setState({
+                users: res.data
+            })
+        })
+        
+        .catch( error => {
+            console.log (error);
+        });
+    }
+
+    render () {
+        return (
+        <div>
+            <h1>MEXART</h1>
+           <ul>
+                { this.state.users.map(user => 
+                    <li>{user.name}</li>
+                )}
+           </ul>
         </div>
-    );
+          );
+    }
 }
 
 export default App;
